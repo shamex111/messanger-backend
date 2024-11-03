@@ -6,7 +6,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
   app.enableCors({
-    origin: 'http://localhost:3000', // Ваш фронтенд URL
+    origin: process.env.APP_URL, // Ваш фронтенд URL
     methods: 'GET,POST,DELETE,PATCH',
     credentials: true, // Разрешить отправку cookies
     allowedHeaders: 'Content-Type,Authorization',
